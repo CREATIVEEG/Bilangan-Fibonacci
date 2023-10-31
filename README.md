@@ -7,18 +7,18 @@ Dosen Pengampu : Donny Maulana, S.Kom., M.M.S.I. <br>
 Mata Kuliah : Pemrograman Mobile
 
 ## Daftar Isi
-| No.| DAFTAR ISI | GOTO                                   |
+| No.| DAFTAR ISI | GoTo                                   |
 |----|------------|----------------------------------------|
 | 1. | Pengantar  | [Menuju Kesini](#pengantar)            |
 | 2. | Layout     | [Menuju Kesini](#layout)               |
 | 3. | Design     | [Menuju Kesini](#tampilan-design)      |
-| 4. | Java       | [Menuju Kesini](#mainactivity.java)    |
+| 4. | Java       | [Menuju Kesini](#mainactivityjava)     |
 | 5. | Hasil Run  | [Menuju Kesini](#hasil-run)            |
 
 ## Pengantar
 Assalamualaikum Wr. Wb <br>
 Disini, Saya akan mengerjakan tugas dari pemrograman mobile. Yaitu, membuat sebuah aplikasi menampilkan bilangan fibonacci.<br>
-Langsung saja, masuk ke tahap peng codingan.
+Saya merubah sedikit tampilan dari yang diperintahkan, seperti menambah tombol reset, dan menambah tombol set limit. Langsung saja masuk ke codingnya.
 
 ### Layout
 Pada layout ini, Saya membuat tiga buah button, dan satu textview. Button yang pertama, berfungsi sebagai tombol “Set Limit” yang nantinya ketika di tekan akan muncul sebuah pop-up untuk masukan limit angka yang ingin kita hitung. Button yang kedua, berfungsi sebagai tombol “count” yang nantinya ketika tombol ditekan akan menghitung bilangan fibonaccinya sesuai dengan yang kita limit. Button yang ketiga, berfungsi sebagai tombol Reset yang nantinya angka akan kembali ke awal.  Dan yang terakhir Textview, yang berfungsi untuk menampilkan angka atau bilangan fibonaccinya yang tepat berada di tengah.
