@@ -21,10 +21,14 @@ Disini, Saya akan mengerjakan tugas dari pemrograman mobile. Yaitu, membuat sebu
 Saya merubah sedikit tampilan dari yang diperintahkan, seperti menambah tombol reset, dan menambah tombol set limit. Langsung saja masuk ke codingnya.
 
 ### Layout
-Pada layout ini, Saya membuat tiga buah button, dan satu textview. Button yang pertama, berfungsi sebagai tombol “Set Limit” yang nantinya ketika di tekan akan muncul sebuah pop-up untuk masukan limit angka yang ingin kita hitung. Button yang kedua, berfungsi sebagai tombol “count” yang nantinya ketika tombol ditekan akan menghitung bilangan fibonaccinya sesuai dengan yang kita limit. Button yang ketiga, berfungsi sebagai tombol Reset yang nantinya angka akan kembali ke awal.  Dan yang terakhir Textview, yang berfungsi untuk menampilkan angka atau bilangan fibonaccinya yang tepat berada di tengah.
+Pada layout ini, Saya membuat tiga buah button, dan satu textview. 
+- Button yang pertama, berfungsi sebagai tombol “Set Limit” yang nantinya ketika di tekan akan muncul sebuah pop-up untuk masukan limit angka yang ingin kita hitung.
+- Button yang kedua, berfungsi sebagai tombol “count” yang nantinya ketika tombol ditekan akan menghitung bilangan fibonaccinya sesuai dengan yang kita limit. Juga berbeda warna pada setiap angka, agar tidak keliru.
+- Button yang ketiga, berfungsi sebagai tombol Reset yang nantinya angka akan kembali ke awal.
+- Dan yang terakhir Textview, yang berfungsi untuk menampilkan angka atau bilangan fibonaccinya yang tepat berada di tengah.
 Berikut ini coding lengkapnya :
 
-- activity_fibonacci.xml
+#### activity_fibonacci.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,7 +113,7 @@ Berikut ini coding lengkapnya :
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-- string.xml
+#### string.xml
 ```
 <resources>
     <string name="app_name">Tugasenam</string>
@@ -119,31 +123,33 @@ Berikut ini coding lengkapnya :
     <string name="enter_fibonacci_limit">Masukan Limit Angka</string>
 </resources>
 ```
-- colors.xml
+#### colors.xml
 ```
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#3F5185</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="color1">#FF0000</color>
+    <color name="color2">#00FF00</color>
+    <color name="color3">#0000FF</color>
 </resources>
 ```
 ### Tamplian Design
 ![Cuplikan layar 2023-10-31 132224](https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/60dd644a-ddfe-4f04-a074-83e234374158)
 
 ### MainActivity.java
-Pada MainActivity.java berisi semua coding untuk fungsi-fungsinya. Seperti, fungsi untuk tombol-tombol, dan rumus bilangan fibonaccinya.
+Pada MainActivity.java berisi semua coding untuk fungsi-fungsinya. Seperti, fungsi untuk tombol-tombol, dialog set limit, warna yang berbeda pada setiap angka, dan rumus bilangan fibonaccinya.
 ```
 package com.example.tugastujuh;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -177,6 +183,21 @@ public class MainActivity extends AppCompatActivity {
                 long fibCurrent = fibNMinus1 + fibNMinus2;
                 fibNMinus2 = fibNMinus1;
                 fibNMinus1 = fibCurrent;
+
+                // Mengatur warna teks berdasarkan angka Fibonacci
+                int colorResId = R.color.color1; // Warna default
+                switch (count % 3) {
+                    case 1:
+                        colorResId = R.color.color1; // Warna merah
+                        break;
+                    case 2:
+                        colorResId = R.color.color2; // Warna hijau
+                        break;
+                    case 0:
+                        colorResId = R.color.color3; // Warna biru
+                        break;
+                }
+                showCount.setTextColor(getResources().getColor(colorResId));
                 showCount.setText(String.valueOf(fibCurrent));
             }
         }
@@ -192,34 +213,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setLimit(View view) {
-        // Create and display a dialog to set the limit
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Set Limit");
+        builder.setTitle("Set limit bilangan yang ditampilkan :");
 
         final EditText input = new EditText(this);
         input.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
         builder.setView(input);
 
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Get the limit from the input and set it for calculations
-                String limitStr = input.getText().toString();
-                limit = Integer.parseInt(limitStr);
-            }
+        builder.setPositiveButton("OK", (dialog, which) -> {
+            String limitStr = input.getText().toString();
+            limit = Integer.parseInt(limitStr);
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
 
         builder.show();
     }
 }
 ```
 ### Hasil RUN
-https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/cdf9bb57-c8a2-4857-a4a0-a1fac6838cba
+Untuk hasil RUN, Saya kirim dalam bentuk video untuk memudahkan dalam penyampaianya.
+
+
+https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/dcacf3a6-d942-424d-86af-0f07609c7766
+
+
 
