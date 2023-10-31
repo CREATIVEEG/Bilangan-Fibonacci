@@ -121,4 +121,92 @@ Berikut ini coding lengkapnya :
 </resources>
 ```
 ### Tamplian Design
-![img](https://ibb.co/9nHsZTZ)
+![Cuplikan layar 2023-10-31 132224](https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/60dd644a-ddfe-4f04-a074-83e234374158)
+
+### MainActivity.java
+Pada MainActivity.java berisi semua coding untuk fungsi-fungsinya. Seperti, fungsi untuk tombol-tombol, dan rumus bilangan fibonaccinya.
+```
+package com.example.tugastujuh;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+    private TextView showCount;
+    private int count = 1;
+    private long fibNMinus1 = 1;
+    private long fibNMinus2 = 0;
+    private int limit = -1; // Inisialisasi limit dengan nilai default
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fibonacci);
+
+        showCount = findViewById(R.id.show_count);
+    }
+
+    public void countUp(View view) {
+        if (count == 0) {
+            showCount.setText("0");
+        } else if (count == 1) {
+            showCount.setText("1");
+        } else {
+            if (limit != -1 && count > limit) {
+                // Jika count melebihi limit, atur ulang perhitungan
+                count = 0;
+                fibNMinus1 = 1;
+                fibNMinus2 = 0;
+                showCount.setText(getString(R.string.count_initial_value));
+            } else {
+                long fibCurrent = fibNMinus1 + fibNMinus2;
+                fibNMinus2 = fibNMinus1;
+                fibNMinus1 = fibCurrent;
+                showCount.setText(String.valueOf(fibCurrent));
+            }
+        }
+
+        count++;
+    }
+
+    public void back1(View view) {
+        count = 1;
+        fibNMinus1 = 1;
+        fibNMinus2 = 0;
+        showCount.setText(getString(R.string.count_initial_value));
+    }
+
+    public void setLimit(View view) {
+        // Create and display a dialog to set the limit
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set Limit");
+
+        final EditText input = new EditText(this);
+        input.setInputType(android.text.InputType.TYPE_CLASS_NUMBER);
+        builder.setView(input);
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Get the limit from the input and set it for calculations
+                String limitStr = input.getText().toString();
+                limit = Integer.parseInt(limitStr);
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+    }
+}
+```
