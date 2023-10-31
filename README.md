@@ -6,6 +6,12 @@ Kelas          : TI.22.A.1 <br>
 Dosen Pengampu : Donny Maulana, S.Kom., M.M.S.I. <br>
 Mata Kuliah : Pemrograman Mobile
 
+## Daftar Isi
+| Command | Description |
+| --- | --- |
+|  | List all new or modified files |
+| git diff | Show file differences that haven't been staged |
+
 ## Pengantar
 Assalamualaikum Wr. Wb <br>
 Disini, Saya akan mengerjakan tugas dari pemrograman mobile. Yaitu, membuat sebuah aplikasi menampilkan bilangan fibonacci.<br>
@@ -210,3 +216,6 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+### Hasil RUN
+https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/cdf9bb57-c8a2-4857-a4a0-a1fac6838cba
+
