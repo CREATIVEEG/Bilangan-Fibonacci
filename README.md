@@ -7,20 +7,24 @@ Dosen Pengampu : Donny Maulana, S.Kom., M.M.S.I. <br>
 Mata Kuliah : Pemrograman Mobile
 
 ## Daftar Isi
-| Command | Description |
-| --- | --- |
-|  | List all new or modified files |
-| git diff | Show file differences that haven't been staged |
+| No.| DAFTAR ISI | GOTO                                   |
+|----|------------|----------------------------------------|
+| 1. | Pengantar  | [Menuju Kesini](#pengantar)            |
+| 2. | Layout     | [Menuju Kesini](#layout)               |
+| 3. | Design     | [Menuju Kesini](#tampilan-design)      |
+| 4. | Java       | [Menuju Kesini](#mainactivity.java)    |
+| 5. | Hasil Run  | [Menuju Kesini](#hasil-run)            |
 
 ## Pengantar
 Assalamualaikum Wr. Wb <br>
 Disini, Saya akan mengerjakan tugas dari pemrograman mobile. Yaitu, membuat sebuah aplikasi menampilkan bilangan fibonacci.<br>
 Langsung saja, masuk ke tahap peng codingan.
 
-### activity_fibonacci.xml
+### Layout
 Pada layout ini, Saya membuat tiga buah button, dan satu textview. Button yang pertama, berfungsi sebagai tombol “Set Limit” yang nantinya ketika di tekan akan muncul sebuah pop-up untuk masukan limit angka yang ingin kita hitung. Button yang kedua, berfungsi sebagai tombol “count” yang nantinya ketika tombol ditekan akan menghitung bilangan fibonaccinya sesuai dengan yang kita limit. Button yang ketiga, berfungsi sebagai tombol Reset yang nantinya angka akan kembali ke awal.  Dan yang terakhir Textview, yang berfungsi untuk menampilkan angka atau bilangan fibonaccinya yang tepat berada di tengah.
 Berikut ini coding lengkapnya :
 
+- activity_fibonacci.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -105,7 +109,7 @@ Berikut ini coding lengkapnya :
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-#### string.xml
+- string.xml
 ```
 <resources>
     <string name="app_name">Tugasenam</string>
@@ -115,7 +119,7 @@ Berikut ini coding lengkapnya :
     <string name="enter_fibonacci_limit">Masukan Limit Angka</string>
 </resources>
 ```
-#### colors.xml
+- colors.xml
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
