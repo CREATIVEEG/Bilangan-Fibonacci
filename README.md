@@ -209,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
         count = 1;
         fibNMinus1 = 1;
         fibNMinus2 = 0;
+        limit = -1;
         showCount.setText(getString(R.string.count_initial_value));
     }
 
