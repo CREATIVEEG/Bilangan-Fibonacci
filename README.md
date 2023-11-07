@@ -118,7 +118,7 @@ Berikut ini coding lengkapnya :
 <resources>
     <string name="app_name">Tugasenam</string>
     <string name="button_label_count">Count</string>
-    <string name="count_initial_value"> </string>
+    <string name="count_initial_value">0</string>
     <string name="button_label_finish">Reset</string>
     <string name="enter_fibonacci_limit">Masukan Limit Angka</string>
 </resources>
@@ -136,7 +136,7 @@ Berikut ini coding lengkapnya :
     <color name="color3">#0000FF</color>
 </resources>
 ```
-### Tamplian Design
+### Tampilan Design
 ![Cuplikan layar 2023-10-31 132224](https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/60dd644a-ddfe-4f04-a074-83e234374158)
 
 ### MainActivity.java
