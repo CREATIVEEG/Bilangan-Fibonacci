@@ -236,7 +236,11 @@ public class MainActivity extends AppCompatActivity {
 Untuk hasil RUN, Saya kirim dalam bentuk video untuk memudahkan dalam penyampaianya.
 
 
-https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/dcacf3a6-d942-424d-86af-0f07609c7766
+
+
+https://github.com/RhendyDikiN/Bilangan-Fibonacci/assets/115677376/75548bea-af5b-452f-bf19-9ad8ee78d6bd
+
+
 
 
 
